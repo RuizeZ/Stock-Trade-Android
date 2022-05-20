@@ -1,0 +1,39 @@
+package com.csci571.stocks;
+
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import java.util.ArrayList;
+
+public class VPAdapter extends FragmentStateAdapter {
+    ArrayList<Fragment> fragmentList = new ArrayList<>();
+    ArrayList<String> fragmentTitle = new ArrayList<>();
+
+    public VPAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+        super(fragmentManager, lifecycle);
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        return fragmentList.get(position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return fragmentList.size();
+    }
+
+    public void addFragmentList(Fragment fragment, String title) {
+        fragmentList.add(fragment);
+        fragmentTitle.add(title);
+    }
+
+    public String getFragmentTitle(int index) {
+        return fragmentTitle.get(index);
+    }
+}
