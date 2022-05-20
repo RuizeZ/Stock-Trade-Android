@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "ng": "ng",
+    "start": "node app.js",
+    "build": "ng build && nodemon app.js",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "finnhub": "^1.2.13"
+  }
+}
